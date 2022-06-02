@@ -1,5 +1,5 @@
 # create key from key management system
-resource "aws_kms_key" "ACS-kms" {
+resource "aws_kms_key" "JAY-kms" {
   description = "KMS key "
   policy      = <<EOF
   {
@@ -9,7 +9,7 @@ resource "aws_kms_key" "ACS-kms" {
     {
       "Sid": "Enable IAM User Permissions",
       "Effect": "Allow",
-      "Principal": { "AWS": "arn:aws:iam::${var.account_no}:user/segun" },
+      "Principal": { "AWS": "arn:aws:iam::${var.account_no}:user/terraform" },
       "Action": "kms:*",
       "Resource": "*"
     }
@@ -21,13 +21,13 @@ EOF
 # create key alias
 resource "aws_kms_alias" "alias" {
   name          = "alias/kms"
-  target_key_id = aws_kms_key.ACS-kms.key_id
+  target_key_id = aws_kms_key.JAY-kms.key_id
 }
 
 # create Elastic file system
 resource "aws_efs_file_system" "ACS-efs" {
   encrypted  = true
-  kms_key_id = aws_kms_key.ACS-kms.arn
+  kms_key_id = aws_kms_key.JAY-kms.arn
 
   tags = merge(
     var.tags,
