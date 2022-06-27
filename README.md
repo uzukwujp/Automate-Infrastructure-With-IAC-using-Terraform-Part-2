@@ -4,6 +4,4 @@ In project 17 we completed the automation of the infrastructure needed to implem
 
 The screenshot below shows the code ran successfully:
 
-
-
-![project-17](https://user-images.githubusercontent.com/52359007/175929752-e2f502e5-3037-4866-a438-3549ccdbbc82.PNG)
+![project-18-done](https://user-images.githubusercontent.com/52359007/175930323-ab0ee77b-f6cc-4c1c-8cb8-77b7fc2d0be9.PNG)
